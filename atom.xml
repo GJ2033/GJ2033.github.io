@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="https://gj2033.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://gj2033.github.io/"/>
+  <updated>2020-12-12T13:12:50.527Z</updated>
+  <id>https://gj2033.github.io/</id>
+  
+  <author>
+    <name>GJ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://gj2033.github.io/2020/121216107.html"/>
+    <id>https://gj2033.github.io/2020/121216107.html</id>
+    <published>2020-12-12T04:07:59.778Z</published>
+    <updated>2020-12-12T13:12:50.527Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
