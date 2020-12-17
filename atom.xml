@@ -6,7 +6,7 @@
   <link href="https://gj2033.github.io/atom.xml" rel="self"/>
   
   <link href="https://gj2033.github.io/"/>
-  <updated>2020-12-14T16:41:07.768Z</updated>
+  <updated>2020-12-17T11:12:48.634Z</updated>
   <id>https://gj2033.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java异常学习</title>
+    <link href="https://gj2033.github.io/2020/121616109.html"/>
+    <id>https://gj2033.github.io/2020/121616109.html</id>
+    <published>2020-12-16T15:58:47.098Z</published>
+    <updated>2020-12-17T11:12:48.634Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java异常学习&quot;&gt;&lt;a href=&quot;#Java异常学习&quot; class=&quot;headerlink&quot; title=&quot;Java异常学习&quot;&gt;&lt;/a&gt;Java异常学习&lt;/h1&gt;&lt;h2 id=&quot;1-1-示例&quot;&gt;&lt;a href=&quot;#1-1-示例&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Markdown基础语法</title>
