@@ -6,7 +6,7 @@
   <link href="https://gj2033.github.io/atom.xml" rel="self"/>
   
   <link href="https://gj2033.github.io/"/>
-  <updated>2020-12-17T11:21:56.744Z</updated>
+  <updated>2020-12-23T14:43:22.549Z</updated>
   <id>https://gj2033.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java类的继承</title>
+    <link href="https://gj2033.github.io/2020/122316110.html"/>
+    <id>https://gj2033.github.io/2020/122316110.html</id>
+    <published>2020-12-23T14:42:13.951Z</published>
+    <updated>2020-12-23T14:43:22.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;第五章-继承&quot;&gt;&lt;a href=&quot;#第五章-继承&quot; class=&quot;headerlink&quot; title=&quot;第五章 继承&quot;&gt;&lt;/a&gt;第五章 继承&lt;/h1&gt;&lt;h2 id=&quot;5-1类、超类、子类&quot;&gt;&lt;a href=&quot;#5-1类、超类、子类&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Java异常学习</title>
