@@ -454,7 +454,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.6k
                 </div>
                 
 
@@ -763,7 +763,8 @@ for(double v : values)
     if(max &lt; v) max &#x3D; v;
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个方法必须返回两个数值,为此可以定义一个包含两个值的类Pair:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">class Pair
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+class Pair
 &#123;
     private double first;
     private double second;
@@ -788,7 +789,8 @@ class ArrayAlg
 
 Pair p &#x3D; ArrayAlg.minmax(d);
 System.out.println(p.getFirst());
-System.out.println(p&#x2F;getSecond());<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+System.out.println(p&#x2F;getSecond());
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>将Pair定义为ArrayAlg的内部公有类,通过ArrayAlg.Pair访问它:</p>
 <p><code>ArrayAlg.Pair p = ArrayAlg.minmax(d);</code></p>
@@ -802,7 +804,8 @@ System.out.println(p&#x2F;getSecond());<span aria-hidden="true" class="line-numb
     ...
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>完整的程序:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">package staticInnerClass;
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+package staticInnerClass;
 
 public class StaticInnerClassTest
 &#123;
@@ -839,32 +842,39 @@ class ArrayAlg
         &#123;
             return second;
         &#125;
-
-        public static Pair minmax(double[] values)
-        &#123;
-            double min &#x3D; Double.POSITIVE_INFINITY;
-            double max &#x3D; Double.NEGATIVE_INFINITY;
-            for (double v : values)
-            &#123;
-                if(min &gt; v) min &#x3D; v;
-                if(max &lt; v) max &#x3D; v;
-            &#125;
-            return new Pair(min, max);
-        &#125;
     &#125;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    public static Pair minmax(double[] values)
+    &#123;
+        double min &#x3D; Double.POSITIVE_INFINITY;
+        double max &#x3D; Double.NEGATIVE_INFINITY;
+        for (double v : values)
+        &#123;
+            if(min &gt; v) min &#x3D; v;
+            if(max &lt; v) max &#x3D; v;
+        &#125;
+        return new Pair(min, max);
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="6-5-代理"><a href="#6-5-代理" class="headerlink" title="6.5 代理"></a>6.5 代理</h2><p>利用代理可以在运行时创建一个实现了一组给定接口的新类.</p>
-<h3 id="6-5-1-何时使用代理"><a href="#6-5-1-何时使用代理" class="headerlink" title="6.5.1 何时使用代理"></a>6.5.1 何时使用代理</h3><p>代理类可以在运行时创建全新的类,这样的代理类能够实现指定的接口,在运行时要提供一个调用处理器(invocation handler).调用处理器是实现了InvocationHandler接口的类对象.在这个接口中只有一个方法:</p>
+<h3 id="6-5-1-何时使用代理"><a href="#6-5-1-何时使用代理" class="headerlink" title="6.5.1 何时使用代理"></a>6.5.1 何时使用代理</h3><p>利用代理可以在运行时创建一个实现了一组给定接口的新类。这种功能只有在编译时无法确定需要实现哪个接口时才有必要使用。</p>
+<p>代理类可以在运行时创建全新的类,这样的代理类能够实现指定的接口,它具有下列方法：</p>
+<ul>
+<li>指定接口所需要的全部方法。</li>
+<li>Object类中的全部方法，例如，toString、equals等。</li>
+</ul>
+<p>不能在运行时定义这些方法的新代码，而是要提供一个调用处理器(invocation handler)。调用处理器是实现了InvocationHandler接口的类对象.在这个接口中只有一个方法:</p>
 <p>Object invoke(Object proxy, Method method, Object[] args)</p>
 <p>无论何时调用代理对象的方法,调用处理器的invoke方法都会被调用,并向其传递Method对象和原始的调用参数.调用处理器需要给出处理调用的方式.</p>
-<h3 id="6-5-2-创建代理对象"><a href="#6-5-2-创建代理对象" class="headerlink" title="6.5.2 创建代理对象"></a>6.5.2 创建代理对象</h3><p>使用Proxy类的newProxyInstance方法,该方法有三个参数:</p>
+<h3 id="6-5-2-创建代理对象"><a href="#6-5-2-创建代理对象" class="headerlink" title="6.5.2 创建代理对象"></a>6.5.2 创建代理对象</h3><p>要创建一个代理对象，使用Proxy类的newProxyInstance方法,该方法有三个参数:</p>
 <ul>
 <li>类加载器(class loader),可以使用不同的类加载器,目前用null表示默认的类加载器.</li>
 <li>一个Class对象数组,每个元素都是需要实现的接口.</li>
 <li>一个调用处理器.</li>
 </ul>
-<p>示例:</p>
+<p>示例程序中，使用代理和调用处理器跟踪方法调用，并且定义了一个TraceHandler包装器存储包装对象。其中的invoke方法打印出被调用方法的名字和参数，随后用包装好的对象作为隐式参数调用这个方法。<br>示例:</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">class TraceHandler implements InvocationHandler
 &#123;
     private Object target;
@@ -882,18 +892,13 @@ class ArrayAlg
         return m.invoke(target, args);
     &#125;
 &#125;
-
+&#x2F;&#x2F;构造用于跟踪方法调用的代理对象
 Object value &#x3D; ...;
 InvocationHandler handler &#x3D; new TraceHandler(value);
 Class[] interfaces &#x3D; new Class[] &#123;Comparable.class&#125;;
 Object proxy &#x3D; Proxy.newProxyInstance(null, interfaces, handler);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-
-
-
-
+<p>无论何时使用proxy调用某个方法，这个方法的名字和参数就会打印出来，之后再用value调用它。</p>
 
                 
             </div>
