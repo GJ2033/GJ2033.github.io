@@ -6,7 +6,7 @@
   <link href="https://gj2033.github.io/atom.xml" rel="self"/>
   
   <link href="https://gj2033.github.io/"/>
-  <updated>2021-01-30T07:08:28.433Z</updated>
+  <updated>2021-03-11T13:05:56.932Z</updated>
   <id>https://gj2033.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>反射</title>
+    <link href="https://gj2033.github.io/2021/031116114.html"/>
+    <id>https://gj2033.github.io/2021/031116114.html</id>
+    <published>2021-03-11T13:05:17.648Z</published>
+    <updated>2021-03-11T13:05:56.932Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;反射&quot;&gt;&lt;a href=&quot;#反射&quot; class=&quot;headerlink&quot; title=&quot;反射&quot;&gt;&lt;/a&gt;反射&lt;/h1&gt;&lt;p&gt;Java的反射是指程序在运行期可以获取一个对象的所有信息。&lt;/p&gt;
+&lt;h2 id=&quot;Class类&quot;&gt;&lt;a href=&quot;#Class类&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>泛型</title>
