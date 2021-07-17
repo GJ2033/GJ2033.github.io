@@ -572,7 +572,7 @@ response.addCookie(cookie);<span aria-hidden="true" class="line-numbers-rows"><s
 <h3 id="Cookie注意点"><a href="#Cookie注意点" class="headerlink" title="Cookie注意点"></a>Cookie注意点</h3><ul>
 <li>Cookie保存在当前浏览器中</li>
 <li>Cookie中如果有中文，通过URLEncoder.encode()来编码，获取时通过URLDecoder.decode()来进行解码。<pre class="line-numbers language-java" data-language="java"><code class="language-java">String name &#x3D; &quot;中文&quot;；
-name &#x3D; URLEncoder.decode(name);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+name &#x3D; URLEncoder.encode(name);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>服务器端发送重复的Cookie会覆盖原来的Cookie</li>
 </ul>
 <h3 id="Cookie的路径"><a href="#Cookie的路径" class="headerlink" title="Cookie的路径"></a>Cookie的路径</h3><p>Cookie的setPath设置cookie的路径，决定服务器是否会从浏览器中加载某些cookie</p>
@@ -645,11 +645,12 @@ String uploadPath &#x3D; request.getServletContext().getRealPath(&quot;&#x2F;upl
 part.write(uploadPath + filename);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>文件下载有两种方式，一是通过超链接的本身特性来下载，二是通过代码下载。</p>
-<h4 id="超链接下载"><a href="#超链接下载" class="headerlink" title="超链接下载"></a>超链接下载</h4><p>在html中使用<a>标签时，是希望进行跳转，但当超链接遇到浏览器不识别的资源时会自动下载，当浏览器能够直接显示资源时，浏览器就会默认显示出来，如txt、jpg等。我们也可以通过download属性规定浏览器进行下载。</p>
+<h4 id="超链接下载"><a href="#超链接下载" class="headerlink" title="超链接下载"></a>超链接下载</h4><p>在html中使用&lt;a&gt;标签时，是希望进行跳转，但当超链接遇到浏览器不识别的资源时会自动下载，当浏览器能够直接显示资源时，浏览器就会默认显示出来，如txt、jpg等。我们也可以通过download属性规定浏览器进行下载。</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 默认下载 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test.zip<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>超链接下载<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
 <span class="token comment">&lt;!-- 指定download属性下载 --></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test.txt<span class="token punctuation">"</span></span> <span class="token attr-name">download</span><span class="token punctuation">></span></span>超链接下载<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="后台下载"><a href="#后台下载" class="headerlink" title="后台下载"></a>后台下载</h4><p>下载步骤：</p>
 <ul>
 <li>得到需要下载的文件名</li>
@@ -663,7 +664,7 @@ part.write(uploadPath + filename);<span aria-hidden="true" class="line-numbers-r
 <li>循环输出</li>
 <li>关闭流</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">String fielName &#x3D; request.getParameter(&quot;fielName&quot;);
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">String fielName &#x3D; request.getParameter(&quot;fileName&quot;);
 String filePath &#x3D; request.getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;&quot;);
 File file &#x3D; new File(filePath + fileName);
 if (file.exists() &amp;&amp; file.isFile())&#123;
