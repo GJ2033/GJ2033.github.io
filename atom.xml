@@ -6,7 +6,7 @@
   <link href="https://gj2033.github.io/atom.xml" rel="self"/>
   
   <link href="https://gj2033.github.io/"/>
-  <updated>2021-07-17T12:18:59.211Z</updated>
+  <updated>2021-07-18T15:49:03.739Z</updated>
   <id>https://gj2033.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>JSP</title>
+    <link href="https://gj2033.github.io/2021/071816117.html"/>
+    <id>https://gj2033.github.io/2021/071816117.html</id>
+    <published>2021-07-18T15:48:19.815Z</published>
+    <updated>2021-07-18T15:49:03.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;JSP&quot;&gt;&lt;a href=&quot;#JSP&quot; class=&quot;headerlink&quot; title=&quot;JSP&quot;&gt;&lt;/a&gt;JSP&lt;/h1&gt;&lt;p&gt;jsp即java server</summary>
+        
+      
+    
+    
+    
+    <category term="JavaEE" scheme="https://gj2033.github.io/categories/JavaEE/"/>
+    
+    
+    <category term="JSP" scheme="https://gj2033.github.io/tags/JSP/"/>
+    
+    <category term="JavaWeb" scheme="https://gj2033.github.io/tags/JavaWeb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Servlet</title>
     <link href="https://gj2033.github.io/2021/071716116.html"/>
     <id>https://gj2033.github.io/2021/071716116.html</id>
     <published>2021-07-17T10:31:37.236Z</published>
-    <updated>2021-07-17T12:18:59.211Z</updated>
+    <updated>2021-07-18T15:49:16.193Z</updated>
     
     
       
@@ -38,6 +65,8 @@
     
     
     <category term="Servlet" scheme="https://gj2033.github.io/tags/Servlet/"/>
+    
+    <category term="JavaWeb" scheme="https://gj2033.github.io/tags/JavaWeb/"/>
     
   </entry>
   

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Servlet, Hexo">
+    <meta name="keywords" content="JSP, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Servlet | Hexo</title>
+    <title>JSP | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Servlet</h1>
+                    <h1 class="description center-align post-title">JSP</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Servlet/">
-                                <span class="chip bg-color">Servlet</span>
+                            <a href="/tags/JSP/">
+                                <span class="chip bg-color">JSP</span>
                             </a>
                         
                             <a href="/tags/JavaWeb/">
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-17
+                    2021-07-18
                 </div>
                 
 
@@ -471,7 +471,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    1.2k
                 </div>
                 
 
@@ -491,219 +491,161 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><p>Servlet是一个java类，用于处理客户端请求，并返回相应内容，Tomcat相当于管理Servlet类的容器。</p>
-<h2 id="Servlet对象"><a href="#Servlet对象" class="headerlink" title="Servlet对象"></a>Servlet对象</h2><h3 id="创建HttpServlet类"><a href="#创建HttpServlet类" class="headerlink" title="创建HttpServlet类"></a>创建HttpServlet类</h3><p>要创建自定义的HttpServlet类，只需要继承HttpServlet，通过重写service()方法或者doGet(),doPost()等方法来实现请求的处理与响应，http请求发出后，到达服务器，服务器找到Tomcat进程，然后根据请求体的内容生成request对象，response对象，同时由请求头的URL参数找到对应的servlet类，并创建该servlet并初始化(init()方法)，将request对象及response对象作为参数传递给响应的方法（如doGet方法），Servlet类做处理后将更新response对象由tomcat返回请求的客户，因此每个servlet类应有对应的访问url，在IDEA中可通过注解来实现，例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">@WebServlet(name &#x3D; &quot;helloServlet&quot;, value &#x3D; &quot;&#x2F;hello-servlet&quot;)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>在合适的时机，tomcat可以销毁servlet对象，此时会调用destory()方法。</p>
-<h3 id="request对象"><a href="#request对象" class="headerlink" title="request对象"></a>request对象</h3><h3 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h3><p>request对象有一些常用的方法，可以用来获取相应的请求信息。</p>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>getRequestURL()</td>
-<td>获取客户端请求的完整URL</td>
-</tr>
-<tr>
-<td>getRequestURI()</td>
-<td>获取请求行中的资源名称部分</td>
-</tr>
-<tr>
-<td>getQueryString()</td>
-<td>获取请求行中的参数部分</td>
-</tr>
-<tr>
-<td>getMethod()</td>
-<td>获取客户端请求方式</td>
-</tr>
-<tr>
-<td>getProtocol</td>
-<td>获取HTTP版本号</td>
-</tr>
-<tr>
-<td>getContextPath()</td>
-<td>获取webapp名字</td>
-</tr>
-<tr>
-<td>getParameter(String name)</td>
-<td>获取指定名称的参数</td>
-</tr>
-<tr>
-<td>getParameterValues(String name)</td>
-<td>获取指定名称参数的所有值</td>
-</tr>
-</tbody></table>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">String url &#x3D; request.getRequestURL().toString();
-System.out.println(&quot;获取客户端请求的完整URL：&quot; + url);
-String queryString &#x3D; request.getQueryString();
-System.out.println(&quot;获取请求行中的参数部分：&quot; + queryString);
+                <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><p>jsp即java server page，是一种在服务器端用java语言编写的动态页面的技术，其本质就是servlet，在第一次请求时，会将jsp编译成一个servlet类。</p>
+<p>由于jsp现在使用已经很少，本文简单介绍EL表达式和JSTL。</p>
+<h2 id="EL表达式的使用"><a href="#EL表达式的使用" class="headerlink" title="EL表达式的使用"></a>EL表达式的使用</h2><h3 id="EL表达式的语法"><a href="#EL表达式的语法" class="headerlink" title="EL表达式的语法"></a>EL表达式的语法</h3><p>EL表达式让Jsp的代码更加简化，语法结构为：</p>
+<pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">$&#123;expression&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-String name &#x3D; request.getParameter(&quot;uname&quot;);
-String[] hobbies &#x3D; request.getParameterValues(&quot;hobby&quot;);
+<p>EL表达式操作的一般是域对象的数据，在Jsp中域对象如：pageContext  request session application；分别表示本页面、一次请求、一次会话、整个应用程序。需要从某个特定的域对象中查找数据时可以使用四个域对象对应的空间对象，分别是：pageScope，requestScope，sessionScope，applicationScope。EL表达式查找方式为从小到大，找到即可，没有返回空字符串。</p>
+<pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">request.setAttribute(&quot;name&quot;, &quot;admin&quot;);
+$&#123;name&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-&#x2F;&#x2F;乱码问题
-request.setCharacterEncoding(&#39;UTF-8&#39;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="EL表达式的使用-1"><a href="#EL表达式的使用-1" class="headerlink" title="EL表达式的使用"></a>EL表达式的使用</h3><h4 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h4><pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">pageContext.setAttribute(&quot;name&quot;, &quot;admin0&quot;);
+request.setAttribute(&quot;name&quot;, &quot;admin1&quot;);
+$&#123;name&#125; &#x2F;&#x2F;admin0
+$&#123;requestScope.name&#125;  &#x2F;&#x2F;admin1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h4><p>服务端的一种跳转方式</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">req.getRequestDispatcher(&quot;路径&quot;).forward(req, resp);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h4 id="request作用域"><a href="#request作用域" class="headerlink" title="request作用域"></a>request作用域</h4><p>例如从数据库查询的数据，将数据传递给request对象，作用范围在同一次请求中有效。</p>
-<pre class="line-numbers language-none"><code class="language-none">request.setAttribute(&quot;参数名&quot;, &quot;参数值&quot;);
-request.getAttribute(&quot;参数名&quot;);
-request.removeAttribute(&quot;参数名&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h4><p>用于判断变量是否为空</p>
+<pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">$&#123;empty name&#125;;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="response对象"><a href="#response对象" class="headerlink" title="response对象"></a>response对象</h3><p>用于服务器响应浏览器的请求的response对象。<br>响应时需要获取输出流：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">getWriter():字符流
-getOutputStream():字节流
+<h3 id="JSTL"><a href="#JSTL" class="headerlink" title="JSTL"></a>JSTL</h3><p>JSTL的全称为Java Server Pages Standard Tag Libary，即JSP标准标签库。</p>
+<p>核心标签库可参考：<a target="_blank" rel="noopener" href="http://java.sun.com/jsp/jstl/core">核心标签库</a></p>
+<p>格式化标签库：<a target="_blank" rel="noopener" href="http://java.sun.com/jsp/jstl/fmt">格式化标签库</a></p>
+<h4 id="标签的使用"><a href="#标签的使用" class="headerlink" title="标签的使用"></a>标签的使用</h4><p>为了在JSP页面使用JSTL类库，必须以下列格式使用taglib指令：</p>
+<pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">&lt;%@taglib uri&#x3D;&quot;&quot; prefix&#x3D;&quot;&quot; %&gt;
 
-PrintWriter writer &#x3D; response.getWriter();
-writer.write(&quot;hello&quot;);
-ServletOutputStream out &#x3D; response.getOutputStream();
+&lt;%@taglib uri&#x3D;&quot;http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; prefix&#x3D;&quot;c&quot; %&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>同时需要导入相应的jar包jstl.jar和standard.jar，通常放在WEB-INF/lib文件夹下，在IDEA中添加依赖。</p>
+<h4 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h4><pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">- if标签
+  &lt;c:if test&#x3D;&quot;判断条件&quot;&gt;
+    &#x2F;&#x2F;满足条件时执行的代码
+  &lt;&#x2F;c:if&gt;
 
-&#x2F;&#x2F;设置响应类型
-response.setHeader(&quot;content-type&quot;, &quot;text&#x2F;html&quot;);
-&#x2F;&#x2F;设置服务端编码
-response.setCharacterEncoding(&quot;UTF-8&quot;);
-&#x2F;&#x2F;设置客户端响应类型及编码
-response.setHeader(&quot;content-type&quot;, &quot;text&#x2F;html;charset&#x3D;UTF-8&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&lt;%
+    request.setAttribute(&quot;score&quot;, 60);
+%&gt;
 
-<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><p>重定向是一种跳转方式，但是是客户端的行为（请求转发是服务端行为），客户端首先发出一个请求，服务端响应请求的同时给客户端一个新的地址，客户端收到响应后，根据新地址发起第二个请求，服务器接受请求作出响应，重定向完成。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">response.sendRedirect(&quot;url&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="Cookie对象"><a href="#Cookie对象" class="headerlink" title="Cookie对象"></a>Cookie对象</h2><p>Cookie是浏览器提供的一种技术，将一些只需在客户端处理的数据存放在本地计算机上，操作Cookie的类为javax.servlet.http.Cookie，随着服务器端的响应发送给客户端，保存在浏览器，下次再访问服务器时把Cookie再带回服务器。</p>
-<h3 id="Cookie的创建与发送"><a href="#Cookie的创建与发送" class="headerlink" title="Cookie的创建与发送"></a>Cookie的创建与发送</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">Cookie cookie &#x3D; new Cookie(name, value);
-response.addCookie(cookie);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="Cookie的获取"><a href="#Cookie的获取" class="headerlink" title="Cookie的获取"></a>Cookie的获取</h3><p>获取所有的cookie后遍历，使用getName()和getValue()方法获取名字或属性</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">Cookie[] cookies &#x3D; request.getCookies();
-for (Cookie cookie : cookies)&#123;
-    System.out.println(cookie.getName() + &quot; &quot; + cookie.getValue());
-    ...
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="设置Cookie的到期时间"><a href="#设置Cookie的到期时间" class="headerlink" title="设置Cookie的到期时间"></a>设置Cookie的到期时间</h3><p>通过设置Cookie对象的maxAge属性。该值默认为-1。设置为0表示删除该Cookie，正整数表示存活的秒数。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">Cookie cookie &#x3D; new Cookie(name, value);
-cookie.setmaxAge();
-response.addCookie(cookie);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Cookie注意点"><a href="#Cookie注意点" class="headerlink" title="Cookie注意点"></a>Cookie注意点</h3><ul>
-<li>Cookie保存在当前浏览器中</li>
-<li>Cookie中如果有中文，通过URLEncoder.encode()来编码，获取时通过URLDecoder.decode()来进行解码。<pre class="line-numbers language-java" data-language="java"><code class="language-java">String name &#x3D; &quot;中文&quot;；
-name &#x3D; URLEncoder.encode(name);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li>服务器端发送重复的Cookie会覆盖原来的Cookie</li>
-</ul>
-<h3 id="Cookie的路径"><a href="#Cookie的路径" class="headerlink" title="Cookie的路径"></a>Cookie的路径</h3><p>Cookie的setPath设置cookie的路径，决定服务器是否会从浏览器中加载某些cookie</p>
+&lt;c:if test&#x3D;&quot;$&#123;score &lt; 60&#125;&quot;&gt;
+    &lt;h2&gt;不及格&lt;&#x2F;h2&gt;
+&lt;&#x2F;c:if&gt;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>当前服务器下任何项目的任意资源都可以获取Cookie对象<pre class="line-numbers language-java" data-language="java"><code class="language-java">cookie.setPath(&quot;&#x2F;&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>当前项目下的资源可获取Cookie对象（默认path）<pre class="line-numbers language-java" data-language="java"><code class="language-java">cookie.setPath(&quot;&#x2F;test&quot;);    &#x2F;&#x2F;项目名test<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>指定项目下的资源可获取Cookie对象<pre class="line-numbers language-java" data-language="java"><code class="language-java">cookie.setPath(&quot;&#x2F;test01&quot;);    &#x2F;&#x2F;指定项目名test01<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li>指定项目下的指定资源下可获取Cookie对象<pre class="line-numbers language-java" data-language="java"><code class="language-java">cookie.setPath(&quot;&#x2F;test&#x2F;reg&quot;);    &#x2F;&#x2F;test&#x2F;reg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<li>forEach标签</li>
+</ul>
+<pre class="line-numbers language-jsp" data-language="jsp"><code class="language-jsp">&lt;c:forEach begin&#x3D;&quot;开始&quot; end&#x3D;&quot;结束数&quot; step&#x3D;&quot;间隔&quot; var&#x3D;&quot;限域变量名&quot;&gt;
+    &#x2F;&#x2F;循环体内容
+&lt;&#x2F;c:forEach&gt;
 
+&lt;c:forEach items&#x3D;&quot;要遍历的集合&quot; var&#x3D;&quot;限域变量名&quot;&gt;
+    &#x2F;&#x2F;执行的操作
+&lt;&#x2F;c:forEach&gt;
+
+&lt;c:forEach begin&#x3D;&quot;0&quot; end&#x3D;&quot;&quot; step&#x3D;&quot;1&quot; var&#x3D;&quot;i&quot;&gt;
+    $&#123;i&#125;
+&lt;&#x2F;c:forEach&gt;
+
+&lt;c:forEach items&#x3D;&quot;$&#123;mylist&#125;&quot; var&#x3D;&quot;item&quot;&gt;
+    $&#123;item&#125;
+&lt;&#x2F;c:forEach&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="过滤器和监听器"><a href="#过滤器和监听器" class="headerlink" title="过滤器和监听器"></a>过滤器和监听器</h2><h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>Filter即为过滤器，用于在Servlet之外对Request和Response进行修改，使用Filter的过程为：Filter对用户请求进行预处理，接着将请求交给Servlet进行处理并生成响应，最后Filter再对服务器响应进行后处理，在一个web应用中可以编写多个Filter，这些Filter组合起来称为一个Filter链。</p>
+<h4 id="过滤器实现"><a href="#过滤器实现" class="headerlink" title="过滤器实现"></a>过滤器实现</h4><ul>
+<li>创建java类并实现Filter接口</li>
+<li>实现doFilter方法，对请求和响应进行相应处理</li>
+<li>设置需要被过滤的资源@WebFilter(“/…”)</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.example.demo;
+import javax.servlet.*;
+import java.io.IOException;
+
+&#x2F;*
+* 过滤器的实现
+*   1.创建普通java类
+*   2.实现Filter接口
+*   3.实现方法
+*   4.设置需要被过滤的资源
+*       @WebFilter(&quot;&#x2F;拦截的资源路径&quot;)
+**&#x2F;
+@WebFilter(&quot;&#x2F;Servlet01&quot;)
+public class Filter01 implements Filter &#123;
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException &#123;
+        Filter.super.init(filterConfig);
+    &#125;
+
+    @Override
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException &#123;
+        &#x2F;&#x2F;请求预处理
+        System.out.println(&quot;doFilter 请求处理...&quot;);
+        &#x2F;&#x2F;放行资源
+        filterChain.doFilter(servletRequest, servletResponse);
+        &#x2F;&#x2F;响应后处理
+        System.out.println(&quot;doFilter01 处理响应...&quot;);
+    &#125;
+
+    @Override
+    public void destroy() &#123;
+        Filter.super.destroy();
+    &#125;
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="过滤器作用"><a href="#过滤器作用" class="headerlink" title="过滤器作用"></a>过滤器作用</h4><p>如处理请求乱码，用户非法访问拦截等</p>
+<h3 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h3><p>web监听器是Servlet中一种特殊的类，能帮助开发者监听web中的特定事件，比如ServletContext，HttpSession，ServletRequest的创建和销毁；变量的创建、销毁和修改等。可以在某些动作前后增加处理，实现监控。如可以用来统计在线人数等。</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>监听器有三类8种：</p>
+<ul>
+<li>监听生命周期<ul>
+<li>ServletRequestListener</li>
+<li>HttpSessionListener</li>
+<li>ServletContextListener</li>
+</ul>
+</li>
+<li>监听值的变化<ul>
+<li>ServletRequestAttributeListener</li>
+<li>HttpSessionAttributeListener</li>
+<li>ServletContextAttributeListener</li>
+</ul>
+</li>
+<li>针对session中的对象<ul>
+<li>javaBean</li>
+</ul>
 </li>
 </ul>
-<h2 id="HttpSession对象"><a href="#HttpSession对象" class="headerlink" title="HttpSession对象"></a>HttpSession对象</h2><p>session属于Http协议的范畴，HttpSession对象是javax.servlet.http.HttpSession的实例。</p>
-<p>对于服务器而言，每一个连接到它的客户端都是一个session，servlet容器使用HttpSession接口创建Http客户端和Http服务器之间的会话。会话将保留指定的时间段。</p>
-<p>session的作用就是为了标识一次会话，或者确认一个用户，并且在一次会话期间共享数据。通过request.getSession()方法来获取当前会话的session对象。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 创建&#x2F;获取session
-HttpSession session &#x3D; request.getSession();
-
-session.getId(); &#x2F;&#x2F;会话标识符
-session.getCreationTime(); &#x2F;&#x2F;会话开始时间
-session.getLastAccessedTime(); &#x2F;&#x2F;最后一次会话时间
-session.isNew(); &#x2F;&#x2F;是否是新的session对象
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h3><p>每个会话有一个唯一的标志，即sessionId，请求到达服务器时，服务器通过客户端传来的cookie中的JSESSIONID来判断这是否是一个新的会话。</p>
-<h3 id="session域对象"><a href="#session域对象" class="headerlink" title="session域对象"></a>session域对象</h3><p>Session表示一次会话，在一次会话中数据可以共享，session作为域对象存在。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 获取session对象
-HttpSession session &#x3D; request.getSession();
-&#x2F;&#x2F;设置session域对象
-session.setAttribute(&quot;uname&quot;, &quot;admin&quot;);
-&#x2F;&#x2F; 获取指定名称的session域对象
-session.getAttribute(&quot;uname&quot;);
-&#x2F;&#x2F; 移除指定名称的域对象
-session.removeAttribute(&quot;uname&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="session的销毁"><a href="#session的销毁" class="headerlink" title="session的销毁"></a>session的销毁</h3><h4 id="默认时间到期"><a href="#默认时间到期" class="headerlink" title="默认时间到期"></a>默认时间到期</h4><p>Tomcat中session的存活时间是30min，一旦重新操作界面，session会重新计时。可以更改session的默认存活时间。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">HttpSession session &#x3D; request.getSession();
-session.setMaxInactiveInterval(int interval);
-int interval &#x3D; session.getMaxInactiveInterval();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="关闭浏览器"><a href="#关闭浏览器" class="headerlink" title="关闭浏览器"></a>关闭浏览器</h4><p>session依赖cookie，cookie默认浏览器关闭失效。</p>
-<h4 id="关闭服务器"><a href="#关闭服务器" class="headerlink" title="关闭服务器"></a>关闭服务器</h4><p>服务器关闭session对象就销毁了</p>
-<h4 id="手动销毁"><a href="#手动销毁" class="headerlink" title="手动销毁"></a>手动销毁</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">session.invalidate();<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="文件上传与下载"><a href="#文件上传与下载" class="headerlink" title="文件上传与下载"></a>文件上传与下载</h2><h3 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h3><p>文件上传涉及到前台页面和后台服务器代码的编写，前台发送文件，后台接收并保存文件，这是一个完整的文件上传。</p>
-<h4 id="前台页面"><a href="#前台页面" class="headerlink" title="前台页面"></a>前台页面</h4><p>我们需要一个表单，表单的请求方式为POST，form表单的enctype必须为”multipart/form-data”,意思为设置表单的类型为文件上传表单。默认情况下这个表单类型是”application/x-www-form-urlencoded”，不能用于文件上传。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 
-    表单类型：
-        普通表单：enctype="application/x-www-form-urlencoded"（默认）
-        二进制表单：enctype="multipart/form-data"（文件上传需要设置）
-    提交方式：
-        GET请求与POST请求
-        文件上传需要设置为method="post"
-    表单元素：
-        文件域
-            &lt;input type="file">
- --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/test<span class="token punctuation">"</span></span><span class="token attr-name">,</span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>post<span class="token punctuation">"</span></span><span class="token attr-name">,</span> <span class="token attr-name">enctype</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>multipart/form-data<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    姓名：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token attr-name">,</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>uname<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/></span></span>
-    文件：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token attr-name">,</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="后台实现"><a href="#后台实现" class="headerlink" title="后台实现"></a>后台实现</h4><p>使用注解@MultipartConfig将一个Servlet标识为支持文件上传。Servlet将multipart/form-data的POST请求封装成Part，通过Part对文件操作。</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">request.setCharacterEncoding(&quot;UTF-8&quot;);
-Part part &#x3D; req.getPart(&quot;file&quot;);
-String uname &#x3D; request.getParameter(&quot;uname&quot;);
-String filename &#x3D; part.getSubmittedFileName();
-&#x2F;&#x2F; 设置上传文件要存放的路径(upload文件夹下)
-String uploadPath &#x3D; request.getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;&quot;);
-part.write(uploadPath + filename);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><p>文件下载有两种方式，一是通过超链接的本身特性来下载，二是通过代码下载。</p>
-<h4 id="超链接下载"><a href="#超链接下载" class="headerlink" title="超链接下载"></a>超链接下载</h4><p>在html中使用&lt;a&gt;标签时，是希望进行跳转，但当超链接遇到浏览器不识别的资源时会自动下载，当浏览器能够直接显示资源时，浏览器就会默认显示出来，如txt、jpg等。我们也可以通过download属性规定浏览器进行下载。</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 默认下载 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test.zip<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>超链接下载<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token comment">&lt;!-- 指定download属性下载 --></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>test.txt<span class="token punctuation">"</span></span> <span class="token attr-name">download</span><span class="token punctuation">></span></span>超链接下载<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="后台下载"><a href="#后台下载" class="headerlink" title="后台下载"></a>后台下载</h4><p>下载步骤：</p>
-<ul>
-<li>得到需要下载的文件名</li>
-<li>得到下载的文件存放的路径</li>
-<li>通过路径与文件名得到File对象</li>
-<li>判断File对象是否存在，且是一个标准文件</li>
-<li>设置响应类型（浏览器无法使用某种方式或激活某个程序来处理的MIME类型）</li>
-<li>设置响应头（下载的文件名等）</li>
-<li>得到要下载的文件输入流</li>
-<li>得到字节输出流</li>
-<li>循环输出</li>
-<li>关闭流</li>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><ul>
+<li>实现监听的接口</li>
+<li>在监听类中添加注解@WebListener</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">String fielName &#x3D; request.getParameter(&quot;fileName&quot;);
-String filePath &#x3D; request.getServletContext().getRealPath(&quot;&#x2F;upload&#x2F;&quot;);
-File file &#x3D; new File(filePath + fileName);
-if (file.exists() &amp;&amp; file.isFile())&#123;
-    response.setContextType(&quot;application&#x2F;x-msdownload&quot;);
-    response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename&#x3D;&quot;+fileName);
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.example.demo;
 
-    InputStream in &#x3D; new FileInputStream(file);
-    ServletOutputStream out &#x3D; response.getOutputStream();
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+&#x2F;**
+ * 监听在线人数
+ *      当有用户访问，创建session对象，人数加1
+ *      当有用户退出，销毁session对象，人数减1
+ *&#x2F;
+@WebListener
+public class Listener01 implements HttpSessionListener &#123;
 
-    int len &#x3D; 0;
-    byte[] bytes &#x3D; new byte[1024];
-    while((len &#x3D; in.read(bytes)) !&#x3D; -1)&#123;
-        out.write(bytes, 0, len);
+    private int onlineNum &#x3D; 0;
+
+    @Override
+    public void sessionCreated(HttpSessionEvent se) &#123;
+        onlineNum++;
+        &#x2F;&#x2F;数据设置到application作用域
+        se.getSession().getServletContext().setAttribute(&quot;onlineNum&quot;, onlineNum);
     &#125;
-    out.close();
-    in.close();
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) &#123;
+        onlineNum--;
+        se.getSession().getServletContext().setAttribute(&quot;onlineNum&quot;, onlineNum);
+    &#125;
 &#125;
-else&#123;
-    response.setContentType(&quot;test&#x2F;html;charset&#x3D;UTF-8&quot;);
-    response.getWriter().write(&quot;&lt;h2&gt;要下载的文件不存在&lt;&#x2F;h2&gt;&quot;);
-    response.getWriter().close();
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -729,7 +671,7 @@ else&#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://gj2033.github.io/2021/071716116.html">https://gj2033.github.io/2021/071716116.html</a>
+                    <a href="https://gj2033.github.io/2021/071816117.html">https://gj2033.github.io/2021/071816117.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -767,8 +709,8 @@ else&#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Servlet/">
-                                    <span class="chip bg-color">Servlet</span>
+                                <a href="/tags/JSP/">
+                                    <span class="chip bg-color">JSP</span>
                                 </a>
                             
                                 <a href="/tags/JavaWeb/">
@@ -942,9 +884,10 @@ else&#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/071816117.html">
                     <div class="card-image">
@@ -962,9 +905,9 @@ else&#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -977,6 +920,7 @@ else&#123;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -999,13 +943,13 @@ else&#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/061716115.html">
+                <a href="/2021/071716116.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="IO流">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Servlet">
                         
-                        <span class="card-title">IO流</span>
+                        <span class="card-title">Servlet</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1016,14 +960,14 @@ else&#123;
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaSE/" class="post-category">
-                                    JavaSE
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
                                 </a>
                             
                             
@@ -1033,12 +977,12 @@ else&#123;
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/IO/">
-                        <span class="chip bg-color">IO</span>
+                    <a href="/tags/Servlet/">
+                        <span class="chip bg-color">Servlet</span>
                     </a>
                     
-                    <a href="/tags/%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">文件处理</span>
+                    <a href="/tags/JavaWeb/">
+                        <span class="chip bg-color">JavaWeb</span>
                     </a>
                     
                 </div>
